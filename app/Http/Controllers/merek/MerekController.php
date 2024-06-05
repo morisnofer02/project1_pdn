@@ -13,7 +13,7 @@ class MerekController extends Controller
 {
     public function index(){
         // kirimkan data ke halaman merek
-        $data['merek'] = Merek::get();
+        $data['merek'] = Merek::firstOrFail();
         return view('admin/merek/index',$data);
     }
 
@@ -35,7 +35,7 @@ class MerekController extends Controller
                 'logo' => $logo
             ]);
             // kembalikan ke halaman merek
-            return redirect('merek')->with('pesan','Merek berhasil ditambahkan');
+            return back()->with('pesan','Merek berhasil ditambahkan');
         }
     }
 
