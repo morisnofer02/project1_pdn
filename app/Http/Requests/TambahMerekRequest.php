@@ -23,7 +23,7 @@ class TambahMerekRequest extends FormRequest
     {
         return [
             'merek' => 'required',
-            'logo' => 'required|mimes:jpg,jpeg,png'
+            'logo' => 'required|mimes:pdf'
         ];
     }
 
